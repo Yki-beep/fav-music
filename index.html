@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link id="theme" rel="stylesheet" href="">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header">
+        <h1>My music playlist</h1>
+
+        <div class="left-icon-conteiner">
+            <svg class="icon" fill="#000000" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M 29.7460 51.8359 C 33.2147 51.8359 38.4647 49.2344 38.4647 42.3437 L 38.4647 20.8984 C 38.4647 19.7265 38.6522 19.5156 39.7069 19.3047 L 50.8868 16.8437 C 51.7072 16.6563 52.2462 16 52.2462 15.1797 L 52.2462 6.3437 C 52.2462 5.0312 51.1912 4.1641 49.9024 4.4453 L 37.4803 7.1406 C 35.8632 7.4922 34.9960 8.3359 34.9960 9.7422 L 35.1366 35.8047 C 35.1366 36.8828 34.6444 37.5859 33.6835 37.7734 L 29.9569 38.5703 C 25.1757 39.5547 22.9491 42.0156 22.9491 45.6015 C 22.9491 49.2578 25.7850 51.8359 29.7460 51.8359 Z M 5.3476 16.3750 L 26.3007 16.3750 C 27.1913 16.3750 27.8944 15.6484 27.8944 14.7812 C 27.8944 13.9141 27.1913 13.2109 26.3007 13.2109 L 5.3476 13.2109 C 4.4803 13.2109 3.7538 13.9141 3.7538 14.7812 C 3.7538 15.6484 4.4803 16.3750 5.3476 16.3750 Z M 5.3476 24.7187 L 26.3007 24.7187 C 27.2147 24.7187 27.8944 23.9922 27.8944 23.1016 C 27.8944 22.2344 27.1913 21.5547 26.3007 21.5547 L 5.3476 21.5547 C 4.4803 21.5547 3.7538 22.2344 3.7538 23.1016 C 3.7538 23.9922 4.4569 24.7187 5.3476 24.7187 Z M 5.3476 33.0625 L 26.3007 33.0625 C 27.2147 33.0625 27.8944 32.3594 27.8944 31.4687 C 27.8944 30.6016 27.1913 29.8984 26.3007 29.8984 L 5.3476 29.8984 C 4.4803 29.8984 3.7538 30.6016 3.7538 31.4687 C 3.7538 32.3594 4.4569 33.0625 5.3476 33.0625 Z">
+                    </path>
+                </g>
+            </svg>
+        </div>
+
+        <div class="right-icon-conteiner">
+            <button onclick="fontSizeIncrease()">
+                <?xml version="1.0" ?><svg class="plus icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.1951 5.75446C15.4738 6.06095 15.9481 6.08354 16.2546 5.80491L18.5 3.76358L20.7455 5.80491C21.052 6.08354 21.5263 6.06095 21.805 5.75446C22.0836 5.44797 22.061 4.97364 21.7545 4.69502L19.0045 2.19504C18.7185 1.93499 18.2816 1.93499 17.9956 2.19504L15.2456 4.69502C14.9391 4.97364 14.9165 5.44797 15.1951 5.75446ZM12.0001 3.99998C12.3076 3.99998 12.5839 4.18767 12.6973 4.4735L18.4472 18.9733C18.5999 19.3584 18.4115 19.7943 18.0265 19.947C17.6414 20.0997 17.2055 19.9113 17.0528 19.5263L15.2579 14.9999H8.74231L6.94736 19.5263C6.79467 19.9113 6.35876 20.0997 5.97372 19.947C5.58869 19.7943 5.40033 19.3584 5.55302 18.9733L11.3029 4.4735C11.4163 4.18767 11.6926 3.99998 12.0001 3.99998ZM9.33713 13.4999H14.6631L12.0001 6.78453L9.33713 13.4999Z" />
+                </svg>
+            </button>
+
+            <button onclick="fontSizeDecrease()">
+                <?xml version="1.0" ?><svg class="minus icon" viewBox="0 -4 28 28" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.2546 2.19505C15.9481 1.91642 15.4738 1.93901 15.1951 2.2455C14.9165 2.55199 14.9391 3.02632 15.2456 3.30495L17.9956 5.80492C18.2816 6.06497 18.7185 6.06497 19.0045 5.80492L21.7545 3.30495C22.061 3.02632 22.0836 2.55199 21.805 2.2455C21.5263 1.93901 21.052 1.91642 20.7455 2.19505L18.5 4.23638L16.2546 2.19505ZM12.0001 3.99998C12.3076 3.99998 12.5839 4.18767 12.6973 4.47351L18.4472 18.9733C18.5999 19.3584 18.4115 19.7943 18.0265 19.947C17.6414 20.0997 17.2055 19.9113 17.0528 19.5263L15.2579 14.9999H8.74231L6.94736 19.5263C6.79467 19.9113 6.35876 20.0997 5.97372 19.947C5.58869 19.7943 5.40033 19.3584 5.55302 18.9733L11.3029 4.47351C11.4163 4.18767 11.6926 3.99998 12.0001 3.99998ZM12.0001 6.78454L9.33713 13.4999H14.6631L12.0001 6.78454Z" />
+                </svg>
+            </button>
+            <button onclick="toggleTheme()">
+                <svg class="icon" fill="#000000" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M 31.3163 14.8867 C 31.5975 14.8867 31.7616 14.6992 31.8085 14.4414 C 32.5351 10.5508 32.5116 10.4570 36.5663 9.6602 C 36.8475 9.6133 37.0116 9.4727 37.0116 9.1914 C 37.0116 8.8867 36.8475 8.7461 36.5663 8.6992 C 32.5116 7.8789 32.5351 7.8086 31.8085 3.9180 C 31.7616 3.6602 31.5975 3.4727 31.3163 3.4727 C 31.0351 3.4727 30.8944 3.6602 30.8475 3.9180 C 30.0975 7.8086 30.1444 7.8789 26.0663 8.6992 C 25.8085 8.7461 25.6210 8.8867 25.6210 9.1914 C 25.6210 9.4727 25.8085 9.6133 26.0663 9.6602 C 30.1679 10.4570 30.0975 10.5508 30.8475 14.4414 C 30.8944 14.6992 31.0351 14.8867 31.3163 14.8867 Z M 42.5429 30.7305 C 42.9648 30.7305 43.2694 30.4258 43.3163 29.9805 C 44.0897 23.6758 44.3475 23.5820 50.7462 22.5273 C 51.2617 22.4336 51.5665 22.1992 51.5665 21.7305 C 51.5665 21.2851 51.2617 21.0039 50.8398 20.9336 C 44.3475 19.8320 44.0897 19.7851 43.3163 13.4805 C 43.2694 13.0351 42.9648 12.7305 42.5429 12.7305 C 42.0975 12.7305 41.7929 13.0351 41.7460 13.4570 C 40.9257 19.7617 40.7382 19.8320 34.2226 20.9336 C 33.8007 21.0039 33.4960 21.2851 33.4960 21.7305 C 33.4960 22.1758 33.8007 22.4336 34.2226 22.5273 C 40.7382 23.5820 40.9726 23.6758 41.7460 30.0273 C 41.7929 30.4258 42.0975 30.7305 42.5429 30.7305 Z M 24.9179 52.5273 C 33.4960 52.5273 40.4335 48.2148 43.5975 40.8789 C 44.0194 39.8711 43.8788 39.0976 43.4335 38.6289 C 43.0116 38.2305 42.3085 38.1367 41.4648 38.4649 C 39.7070 39.1680 37.5507 39.5664 34.8554 39.5664 C 24.3788 39.5664 17.6288 33.0273 17.6288 22.7383 C 17.6288 19.9023 18.1679 17.0898 18.8944 15.6133 C 19.3632 14.6758 19.3163 13.8789 18.9179 13.3867 C 18.4726 12.8711 17.6757 12.7070 16.5741 13.1523 C 9.3788 16.0820 4.4335 23.5820 4.4335 32.3476 C 4.4335 43.7617 12.8241 52.5273 24.9179 52.5273 Z M 24.9648 48.9648 C 14.9570 48.9648 7.9960 41.6758 7.9960 32.0664 C 7.9960 26.1602 10.7382 20.9570 15.0975 17.6289 C 14.5351 19.1523 14.2070 21.4961 14.2070 23.7461 C 14.2070 35.2773 22.1757 43.0117 33.9648 43.0117 C 36.0741 43.0117 37.9960 42.7539 38.9804 42.4023 C 36.0507 46.4570 30.8241 48.9648 24.9648 48.9648 Z">
+                        </path>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 
+        <div class="musician-component">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img" src="" alt="">
+                <div class="info">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image" src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image" src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image" src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image" src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        
+            <div class="Other">
+                <h2></h2>
+                <div class="song">
+                    <img loading="lazy" class="song-image" src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+            </div>
+        
+        -->
+
+
+
+        <div class="musician-component" id="Glass Animals">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img" class="musician-img"
+                    src="https://www.dailynews.com/wp-content/uploads/2017/09/0430_fea_ocr-l-glassanimals-03.jpg?w=1860"
+                    alt="Glass Animals">
+                <div class="info">
+                    <h2>Glass Animals</h2>
+                    <p>Glass Animals are an English indie rock band formed in Oxford in 2010. The band's line-up
+                        consists of Dave Bayley, Drew MacFarlane, Edmund Irwin-Singer, and Joe Seaward.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-11qWtdHfrsKk-0-t500x500.jpg" alt="Hazey">
+                    <div>
+                        <h3>Hazey</h3>
+                        <audio src="/music/glass-animals/Hazey - Glass Animals.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-4lcyLd3khCWy-0-t500x500.jpg" alt="Pools">
+                    <div>
+                        <h3>Pools</h3>
+                        <audio src="/music/glass-animals/Pools   Glass Animals.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2732d54f689c7c394ee3bd550fb" alt="Pork Soda">
+                    <div>
+                        <h3>Pork Soda</h3>
+                        <audio src="/music/glass-animals/Pork Soda Glass Animals.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273b90af6482aed172a2ae53da6" alt="Cocoa Hooves">
+                    <div>
+                        <h3>Cocoa Hooves</h3>
+                        <audio src="/music/glass-animals/Cocoa Hooves - Glass Animals.mp3" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Ghost">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://1000logos.net/wp-content/uploads/2025/03/Ghost-Logo.png" alt="Ghost">
+                <div class="info">
+                    <h2>Ghost</h2>
+                    <p>Ghost is a Swedish rock band known for combining costumed theatricality, heavy metal, and arena
+                        rock. Performers prefer to stay anonymous</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-000187708289-qgw0m9-t1080x1080.jpg" alt="Square Hammer">
+                    <div>
+                        <h3>Square Hammer</h3>
+                        <audio src="/music/Ghost/Square Hammer   Ghost.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2730b70561f93087720d94ecdfc" alt="Crucified">
+                    <div>
+                        <h3>Crucified</h3>
+                        <audio src="/music/Ghost/If You Have Ghost CD 1 TRACK 3 (320).mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2731b07731547bf53b9d09a0df5"
+                        alt="Call Me Little Sunshine">
+                    <div>
+                        <h3>Call Me Little Sunshine</h3>
+                        <audio src="/music/Ghost/Call Me Little Sunshine.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://images.genius.com/a5b6dccd472cef51b5bd4482ec197be6.1000x1000x1.png"
+                        alt="Merry On A Cross">
+                    <div>
+                        <h3>Merry On A Cross</h3>
+                        <audio src="/music/Ghost/Ghost - Mary On A Cross.mp3" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Хейтспіч">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://i.scdn.co/image/ab67616d0000b2734bfefca6037df2f7a2656316" alt="Хейтспіч">
+                <div class="info">
+                    <h2>Хейтспіч</h2>
+                    <p>A Ukrainian band from Odesa called Hatespeech (хейтспіч) is well-known for their entrancing pop
+                        melodies that cut over language borders.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-kBWE407i9Sa45T4u-xLM6IQ-t500x500.png" alt="Голос">
+                    <div>
+                        <h3>Голос</h3>
+                        <audio src="/music/Хейтспіч/Голос - хейтспіч.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://cdn-images.dzcdn.net/images/cover/1eeb3d63d346978f7274d0e8dee027b8/1900x1900-000000-80-0-0.jpg"
+                        alt="Пісня для радіо">
+                    <div>
+                        <h3>Пісня для радіо</h3>
+                        <audio src="/music/Хейтспіч/Пісня для радіо - хейтспіч.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2736230de03b4840853be94f9d5"
+                        alt="Я помру не своєю смертю">
+                    <div>
+                        <h3>Я помру не своєю смертю</h3>
+                        <audio src="/music/Хейтспіч/я_помру_не_своєю_смертю - хейтспіч.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://cdn-images.dzcdn.net/images/cover/11bbda5481114057a0ab8a1dd03c8589/1900x1900-000000-80-0-0.jpg"
+                        alt="гейт спіч">
+                    <div>
+                        <h3>Гейтспіч</h3>
+                        <audio src="/music/Хейтспіч/гейтспіч - хейтспіч.m4a" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Yaelokre">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://i.scdn.co/image/ab6761610000e5eb46d7c4bbfbc22b639d1591a3" alt="Yaelokre">
+                <div class="info">
+                    <h2>Yaelokre</h2>
+                    <p>Keath Ósk is a Filipino-Icelandic singer-songwriter and multimedia artist now preforming with a
+                        group</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-fHjoBYVB6meo-0-t500x500.jpg" alt="Kid & Leveret">
+                    <div>
+                        <h3>Kid & Leveret</h3>
+                        <audio src="/music/Yaelokre/yaelokre- kid-leveret.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273b21ee5d4bced85485bb75de3" alt="And the Hound">
+                    <div>
+                        <h3>And the Hound</h3>
+                        <audio src="/music/Yaelokre/And the Hound - Yaelokre.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d00001e024ed0e026ed2977b49868c481" alt="Harpy Hare">
+                    <div>
+                        <h3>Harpy Hare</h3>
+                        <audio src="/music/Yaelokre/Harpy Hare - Yaelokre.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://images.genius.com/ee04ccf9da7bfcc9929a11674c64963e.1000x1000x1.png"
+                        alt="Songs of origin">
+                    <div>
+                        <h3>Songs of Origin</h3>
+                        <audio
+                            src="/music/Yaelokre/Yaelokre_Songs_of_Origin_My_farewells_to_the_fields_Bird_cage_blue.mp3"
+                            controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Mindless Self Indulgence">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://i.scdn.co/image/1f1b7c62c4e57973551a3a636fbd0126662501ed"
+                    alt="Mindless Self Indulgence">
+                <div class="info">
+                    <h2>Mindless Self Indulgence</h2>
+                    <p>An American electropunk band formed in New York City in 1997. Their music has a mixed style which
+                        includes punk rock, alternative rock, electronica, techno, industrial, hip hop, and breakbeat
+                        hardcore.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273ea5c6ae7cde0e306c58a5e41" alt="Lights Out">
+                    <div>
+                        <h3>Lights Out</h3>
+                        <audio src="/music/Mindless Self Indulgence/Mindless Self Indulgence - Lights Out.mp3"
+                            controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-lF1xe55PN6qB-0-t240x240.jpg" alt="Shut Me Up">
+                    <div>
+                        <h3>Shut Me Up</h3>
+                        <audio src="/music/Mindless Self Indulgence/Shut me up.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://cdn.season-of-mist.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/M/i/Mindless-Self-Indulgence-Never-wanted-to-dance-18038-1_3.jpg"
+                        alt="Never Wanted To Dance">
+                    <div>
+                        <h3>Never Wanted To Dance</h3>
+                        <audio
+                            src="/music/Mindless Self Indulgence/Never Wanted to Dance   Mindless Self Indulgence.mp3"
+                            controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2736d0186f5ba84de05d6e6f2ab" alt="Bitches">
+                    <div>
+                        <h3>Bitches</h3>
+                        <audio src="/music/Mindless Self Indulgence/Mindless Self Indulgence – Bitches.mp3"
+                            controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Rabbitology">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://i1.sndcdn.com/avatars-pWLGy9xr5KH1WbTO-pTlHfA-t1080x1080.jpg" alt="Rabbitology">
+                <div class="info">
+                    <h2>Rabbitology</h2>
+                    <p>Rabbitology is a one-person band that self-describes their music as "a lil bit folk, a lil bit
+                        cosmic, a lil bit whatnot… songs for the winged, moss-clad being that climbs through my window
+                        every blue moon and demands MUSIC."</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-dJPamfuzXeDT-0-t500x500.png" alt="Millie, Warm the Kettle">
+                    <div>
+                        <h3>Millie, Warm the Kettle</h3>
+                        <audio src="/music/Rabbitology/Millie, Warm the Kettle (Dorm Demo) - Rabbitology.m4a"
+                            controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-KLN8XaxZuNzs-0-t500x500.png" alt="CANDLEBURN">
+                    <div>
+                        <h3>CANDLEBURN</h3>
+                        <audio src="/music/Rabbitology/CANDLEBURN (Dorm Demo) - Rabbitology.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-AUtq6VLeMgts-0-t1080x1080.png" alt="The Bog Bodies">
+                    <div>
+                        <h3>The Bog Bodies</h3>
+                        <audio src="/music/Rabbitology/The Bog Bodies (Dorm Demo) - Rabbitology.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d00001e025efc34eacb17ea584a6077ef" alt="Butcheress">
+                    <div>
+                        <h3>Butcheress</h3>
+                        <audio src="/music/Rabbitology/Butcheress - Rabbitology.m4a" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Cosmo Sheldrake">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img" src="https://f4.bcbits.com/img/0034521151_10.jpg"
+                    alt="Cosmo Sheldrake">
+                <div class="info">
+                    <h2>Cosmo Sheldrake</h2>
+                    <p>an English musician, composer, and producer. Much of his work is concerned with improvisation,
+                        nonsense, and the sonorous environment.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-emEP6GUzIWdt-0-t500x500.png" alt="Nightjar">
+                    <div>
+                        <h3>Nightjar</h3>
+                        <audio src="/music/Cosmo Sheldrake/Nightjar   Cosmo Sheldrake.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://cdn-images.dzcdn.net/images/cover/c96e587a0e9f008ed68166765f73e04d/0x1900-000000-80-0-0.jpg"
+                        alt="Wriggle">
+                    <div>
+                        <h3>Wriggle</h3>
+                        <audio src="/music/Cosmo Sheldrake/Wriggle   Cosmo Sheldrake.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-ix8d0CqmMwUI-0-t500x500.jpg" alt="Come Along">
+                    <div>
+                        <h3>Come Along</h3>
+                        <audio src="/music/Cosmo Sheldrake/Come Along   Cosmo Sheldrake.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273ea39dfa2302a1d539c33967b" alt="Interdimensional">
+                    <div>
+                        <h3>Interdimensional</h3>
+                        <audio src="/music/Cosmo Sheldrake/Interdimensional - Cosmo Sheldrake.m4a" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Måneskin">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://cdn-images.dzcdn.net/images/artist/b5ee25137476918b7660f80529981436/1900x1900-000000-80-0-0.jpg"
+                    alt="Måneskin">
+                <div class="info">
+                    <h2>Måneskin</h2>
+                    <p>Måneskin is an Italian rock band formed in Rome in 2016. The band is composed of lead vocalist
+                        Damiano David, bassist Victoria De Angelis, guitarist Thomas Raggi, and drummer Ethan Torchio.
+                    </p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b27393fcc2231abeb51d7e41ec5d" alt="FEEL">
+                    <div>
+                        <h3>FEEL</h3>
+                        <audio src="/music/Måneskin/FEEL.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273f8fe1aa3779aba71dad9f641" alt="MAMMAMIA">
+                    <div>
+                        <h3>MAMMAMIA</h3>
+                        <audio src="/music/Måneskin/MAMMAMIA.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://upload.wikimedia.org/wikipedia/en/4/46/M%C3%A5neskin_-_Honey_%28Are_U_Coming%29.png"
+                        alt="HONEY (ARE U COMING?)">
+                    <div>
+                        <h3>HONEY (ARE U COMING?)</h3>
+                        <audio src="/music/Måneskin/Måneskin - HONEY (ARE U COMING).mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273e5c4776d41fd00198193ae53" alt="GOSSIP">
+                    <div>
+                        <h3>GOSSIP</h3>
+                        <audio src="/music/Måneskin/Maneskin feat. Tom Morello - Gossip (megapesni.fm).mp3"
+                            controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Melanie Martinez">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Melanie_Martinez_%28K-12%29.jpg/640px-Melanie_Martinez_%28K-12%29.jpg"
+                    alt="Melanie Martinez">
+                <div class="info">
+                    <h2>Melanie Martinez</h2>
+                    <p>Melanie Adele Martinez is an American singer and songwriter. Martinez's music has been described
+                        as pop, alternative pop, art pop, electropop, and dark pop.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d00001e02c8198f7160d64bb9e8eae7c1" alt="VOID">
+                    <div>
+                        <h3>VOID</h3>
+                        <audio src="/music/Melanie Martinez/VOID.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-000467622951-vx3ngv-t500x500.jpg" alt="Mad Hatter">
+                    <div>
+                        <h3>Mad Hatter</h3>
+                        <audio src="/music/Melanie Martinez/Mad Hatter.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://quals.ua/image/cache/catalog/Covers/melanie-martinez-cry-baby-vinyl-2000x2000.jpg"
+                        alt="Cry Baby">
+                    <div>
+                        <h3>Cry Baby</h3>
+                        <audio src="/music/Melanie Martinez/Cry Baby.mp3" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-112437aa-f9cf-4c48-b563-bf8b239ed484-0-t500x500.jpg"
+                        alt="Carousel">
+                    <div>
+                        <h3>Carousel</h3>
+                        <audio src="/music/Melanie Martinez/Carousel.mp3" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="EPIC:The Musical">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://sandienews.com/wp-content/uploads/2025/02/Review.png" alt="cast of EPIC:The Musical">
+                <div class="info">
+                    <h2>cast of EPIC:The Musical</h2>
+                    <p>EPIC: The Musical is a musical adaptation of Homer's Odyssey created by Jorge Rivera-Herrans.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273f0b8c2fc25572acad60b0b09" alt="Wouldn't You Like">
+                    <div>
+                        <h3>Wouldn't You Like</h3>
+                        <audio src="/music/cast of EPIC The Musical/Wouldn't You Like.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273bbb2d972c9892dc91c626a62" alt="God Games">
+                    <div>
+                        <h3>God Games</h3>
+                        <audio src="/music/cast of EPIC The Musical/God Games.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b273f0b8c2fc25572acad60b0b09" alt="Puppeteer">
+                    <div>
+                        <h3>Puppeteer</h3>
+                        <audio src="/music/cast of EPIC The Musical/Puppeteer.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2736e20dfbc1ea325ca55a783a5" alt="Get in the Water">
+                    <div>
+                        <h3>Get in the Water</h3>
+                        <audio src="/music/cast of EPIC The Musical/Get in the Water.m4a" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="musician-component" id="Rohata Zhaba">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://i1.sndcdn.com/avatars-AgU0aOGdRyvnElbn-GrdOjw-t500x500.jpg" alt="Rohata Zhaba">
+                <div class="info">
+                    <h2>Rohata Zhaba</h2>
+                    <p>A Ukrainian rock band</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://cdn-images.dzcdn.net/images/cover/c54b37832489cfc13e7506e828487f2e/0x1900-000000-80-0-0.jpg" alt="Ліхтар">
+                    <div>
+                        <h3>Ліхтар</h3>
+                        <audio src="/music/Rohata Zhaba/rohata-zhaba-likhtar.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://cdn-images.dzcdn.net/images/cover/c27ac0774e5332f04dac8ab713012d6d/1900x1900-000000-80-0-0.jpg" alt="Рогате жабеня">
+                    <div>
+                        <h3>Рогате жабеня</h3>
+                        <audio src="/music/Rohata Zhaba/rohata-zhaba-rogate-zhabenia.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/2c/b2/4a/2cb24a5f-15da-73f2-0a9d-2a2f8d78095e/859782082854_cover.jpg/600x600bf-60.jpg" alt="Колискова для жаби">
+                    <div>
+                        <h3>Колискова для жаби</h3>
+                        <audio src="/music/Rohata Zhaba/Колискова для жаби - Rohata Zhaba.m4a" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i.scdn.co/image/ab67616d0000b2738d41fe756df945c619c7f8be" alt="Голови-бороди">
+                    <div>
+                        <h3>Голови-бороди</h3>
+                        <audio src="/music/Rohata Zhaba/1_1 - Голови-бороди - Rohata Zhaba (320).mp3" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="musician-component" id="C418">
+            <br>
+            <hr>
+            <div class="musician-info">
+                <img loading="lazy" class="musician-img"
+                    src="https://i.scdn.co/image/ab6761610000e5eba9b8234e3071836212561d19" alt="C418">
+                <div class="info">
+                    <h2>C418</h2>
+                    <p>Daniel Rosenfeld, known professionally as C418, is a German musician, producer and sound
+                        engineer. Known for his minimalistic ambient work, he rose to fame as the original composer and
+                        sound designer for the sandbox video game Minecraft.</p>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-FFnDO9Nkw47bwdoj-NKe4Aw-t500x500.jpg" alt="Mice on Venus">
+                    <div>
+                        <h3>Mice on Venus</h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-000125935263-w7tj4e-t500x500.jpg" alt="Subwoofer Lullaby">
+                    <div>
+                        <h3>Subwoofer Lullaby</h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-000125935263-w7tj4e-t500x500.jpg" alt="Wet Hands">
+                    <div>
+                        <h3>Wet Hands</h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+                <div class="song">
+                    <img loading="lazy" class="song-image"
+                        src="https://i1.sndcdn.com/artworks-FZhA6jMFkZNytiuI-tySVKQ-t500x500.jpg" alt="Haggstrom">
+                    <div>
+                        <h3>Haggstrom</h3>
+                        <audio src="" controls></audio>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="other-musician-component" id="Others">
+            <br>
+            <hr>
+            <h2>Other musicians</h2>
+            <div class="other-musicians">
+                <div class="Other">
+                    <h2>Paris Paloma</h2>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i.scdn.co/image/ab67616d0000b27368e2628c9ce8a201ae30b506"
+                            alt="LABOUR (the cacophony)">
+                        <div>
+                            <h3>LABOUR (the cacophony)</h3>
+                            <audio src="/music/Paris Paloma/LABOUR (the cacophony).mp3" controls></audio>
+                        </div>
+                    </div>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i.scdn.co/image/ab67616d0000b273bc072178b72cf1f7f863fe69" alt="Fruits">
+                        <div>
+                            <h3>Fruits</h3>
+                            <audio src="/music/Paris Paloma/paris paloma - the fruits.mp3" controls></audio>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Other">
+                    <h2>Aphex Twin</h2>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i.scdn.co/image/ab67616d0000b2732e261a0b1b19d0ff95e346b3" alt="QKThr">
+                        <div>
+                            <h3>QKThr</h3>
+                            <audio src="/music/Aphex Twin/QKThr - Aphex Twin.m4a" controls></audio>
+                        </div>
+                    </div>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i.scdn.co/image/ab67616d0000b273c34c84629aa6f6e1c8ba5ac7"
+                            alt="Alberto Balsalm">
+                        <div>
+                            <h3>Alberto Balsalm</h3>
+                            <audio src="/music/Aphex Twin/Aphex Twin - Alberto Balsalm.mp3" controls></audio>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="Other">
+                    <h2>half·alive</h2>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i.scdn.co/image/ab67616d0000b273f89d2d949f9671982e9e732c" alt="still feel.">
+                        <div>
+                            <h3>still feel.</h3>
+                            <audio src="/music/half·alive/still feel..mp3" controls></audio>
+                        </div>
+                    </div>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i.scdn.co/image/ab67616d0000b273f89d2d949f9671982e9e732c" alt="creature">
+                        <div>
+                            <h3>creature</h3>
+                            <audio src="/music/half·alive/creature - halfalive.m4a" controls></audio>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="Other">
+                    <h2>C418</h2>
+                    <div class="song">
+                        <img loading="lazy" class="song-image"
+                            src="https://i1.sndcdn.com/artworks-FFnDO9Nkw47bwdoj-NKe4Aw-t500x500.jpg"
+                            alt="Mice on Venus">
+                        <div>
+                            <h3>Mice on Venus</h3>
+                            <audio src="/music/C418/C418 – Mice on Venus.mp3" controls></audio>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+    </main>
+
+    <footer>
+        <h3>Thank you for sticking with us!</h3>
+        <h3>made by Kate</h3>
+    </footer>
+
+</body>
+<script src="/script.js"></script>
+
+</html>

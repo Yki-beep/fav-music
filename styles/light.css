@@ -1,0 +1,26 @@
+
+html{
+    background: linear-gradient(#BBD1FF, #E9D1FD);
+    color: #352545;
+}
+
+header{
+    background: linear-gradient(#E9D1FD, transparent);
+}
+footer{
+    background-image: url(/images/mountines-light.png);
+    background-repeat: repeat-x;
+}
+
+hr{
+    border: 1px solid #352545
+}
+
+
+.musician-img, .song-image, audio{
+    background-color: #E9D1FD;
+}
+
+.icon{
+    fill: #352545;
+}

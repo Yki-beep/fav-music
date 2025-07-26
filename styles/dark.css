@@ -1,0 +1,26 @@
+
+html{
+    background: linear-gradient(#262862, #452662);
+    color: #E1E2F5;
+}
+
+header{
+    background: linear-gradient(#452662, transparent);
+}
+footer{
+    background-image: url(/images/mountains-dark.png);
+    background-repeat: repeat-x;
+}
+
+hr{
+    border: 1px solid #E1E2F5
+}
+
+
+.musician-img, .song-image, audio{
+    background-color: #452662;
+}
+
+.icon{
+    fill: #E1E2F5;
+}

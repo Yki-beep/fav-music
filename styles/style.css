@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Architects+Daughter&display=swap');
+
+
+
+body{
+    margin: 0;
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.4s; */
+}
+footer {
+    width: 100%;
+    padding-top: 20vh;
+    padding-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+/* fonts */
+h1{
+    font-family: "Amita", serif;
+    font-weight: 700;
+    font-size: 2em;
+    font-style: normal;
+}
+h2{
+    font-family: "Amita", serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    font-style: normal;
+}
+h3{
+    font-weight: 700;
+    font-size: 1.4em;
+}
+/*  */
+
+
+/* imgs / icons */
+.icon{
+    width: 5vw;
+}
+button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.left-icon-conteiner{
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    position: absolute;
+    margin: 0;
+    top: 20px;
+    left: 3vw;
+}
+.right-icon-conteiner{
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    position: absolute;
+    margin: 0;
+    top: 20px;
+    right: 3vw;
+}
+/*  */
+
+
+
+/* musician */
+.musician-component{
+    width: 80vw;
+    justify-self: center;
+}
+.musician-info{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.musician-img{
+    width: 15vw;
+    /* height: 15vw; */
+    background-color: #E9D1FD;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.other-musician-component{
+    width: 80vw;
+    justify-self: center;
+}
+.other-musicians{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*  */
+
+
+/* songs */
+.songs{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 4%;
+}
+.song{
+    width: 40%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5%;
+    /* grid-template-rows: auto; */
+}
+.song-image{
+    width: 10vw;
+    height: 10vw;
+    background-color: #E9D1FD;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+audio{
+    background-color: #E9D1FD;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50px;
+    width: 20vw;
+}
+/*  */
+
+
+/* @media (min-width = 900px) {
+    
+}
+
+@media (max-width = 900px) {
+    .musician-component{
+        width: 100%;
+    }
+}
+@media (max-width = 600px) {
+    .songs{
+        grid-template-columns: auto;
+    }
+
+} */
