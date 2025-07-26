@@ -1,4 +1,5 @@
-
+localStorage.setItem("theme", "light")
+localStorage.setItem("fontSize", "20")
 window.onload = function () {
     let body = document.querySelector("body");
     let newSize = localStorage.getItem('fontSize');
