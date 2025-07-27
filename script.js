@@ -1,6 +1,13 @@
-localStorage.setItem("theme", "light")
-localStorage.setItem("fontSize", "20")
+
+
 window.onload = function () {
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "light")
+    }
+    if (localStorage.getItem("fontSize")) {
+        localStorage.setItem("fontSize", "20")
+    }
+
     let body = document.querySelector("body");
     let newSize = localStorage.getItem('fontSize');
     body.style.fontSize = newSize + "px";
@@ -44,7 +51,7 @@ function fontSizeDecrease() {
 
     if (parseInt(fontSize.split("px").join("")) > 14) {
 
-        let size = parseInt(fontSize.split("px").join("")) -  2;
+        let size = parseInt(fontSize.split("px").join("")) - 2;
         localStorage.setItem('fontSize', size);
         body.style.fontSize = size + "px";
     }
