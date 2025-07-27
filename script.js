@@ -1,5 +1,4 @@
 
-
 window.onload = function () {
     if (!localStorage.getItem("theme")) {
         localStorage.setItem("theme", "light")
