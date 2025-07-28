@@ -38,20 +38,22 @@ function toggleTheme() {
 function fontSizeIncrease() {
     let body = document.querySelector("body");
     let fontSize = window.getComputedStyle(body).getPropertyValue('font-size');
+    let curentSize = parseInt(fontSize.split("px").join(""))
 
-    if (parseInt(fontSize.split("px").join("")) < 40) {
+    if (curentSize < 40) {
 
-        let size = parseInt(fontSize.split("px").join("")) + 2;
+        let size = curentSize + 2;
         body.style.fontSize = size + "px";
     }
 }
 function fontSizeDecrease() {
     let body = document.querySelector("body")
     let fontSize = window.getComputedStyle(body).getPropertyValue('font-size');
+    let curentSize = parseInt(fontSize.split("px").join(""))
 
-    if (parseInt(fontSize.split("px").join("")) > 14) {
+    if (curentSize > 14) {
 
-        let size = parseInt(fontSize.split("px").join("")) - 2;
+        let size = curentSize - 2;
         body.style.fontSize = size + "px";
     }
 }
